@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Best Pick</title>
+<style>
+.topright {
+	position: absolute;
+	top: 8px;
+	right: 16px;
+	font-size: 18px;
+}
+</style>
+</head>
+<body>
+	<h1 style="text-align: center;">Welcome Consumer</h1>
+	<form action="#"
+		th:action="@{/edit/{userName}/{userId}(userName=${userName},userId=${userId})}"
+		th:object="${userDetails}" method="get">
+		<br>
+		<button class="topright" type="submit">edit</button>
+	</form>
+	<h4 style="text-align: center;">
+		<a href="/logout">Logout <label th:text="${userDetails.userName}"></label></a>
+	</h4>
+</body>
+</html>

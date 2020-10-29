@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Best Pick</title>
+</head>
+<body>
+	<div align="center">
+		<h2>Select user role:</h2>
+		<form action="#"
+			th:action="@{/update/{userName}/{userId}(userName=${userName},userId=${userId})}"
+			th:object="${userDetails}" method="post">
+			<input type="radio" th:field="*{role}" value="consumer" /> consumer
+			<input type="radio" th:field="*{role}" value="seller" /> seller <br>
+			<br>
+			<button type="submit">Save</button>
+
+		</form>
+	</div>
+</body>
+</html>
+
+
+
