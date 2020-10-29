@@ -20,7 +20,7 @@ https://dzone.com/articles/getting-started-with-google-sign-in-in-spring-boot
 3. Modify the following database configrations in `application.properties` file - spring.datasource.url, spring.datasource.username, spring.datasource.password. The default one is running with spring boot h2 database, you can also use mysql database.
 
 Reference links:
-https://attacomsian.com/blog/spring-data-jpa-h2-database
+https://attacomsian.com/blog/spring-data-jpa-h2-database,
 https://spring.io/guides/gs/accessing-data-mysql/
 
 4. Run the application using `mvn spring-boot:run` or by running the `BestPickApplication` class directly from your IDE.If you want to run the application locally in the production mode, run `mvn spring-boot:run -Pproduction`.
