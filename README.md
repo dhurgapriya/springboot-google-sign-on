@@ -1,9 +1,9 @@
 # springboot-google-sign-on
 
-# Description
+## Description
 This is an project demonstrating how to configure and use the OAuth services provided by Google, i.e. how to enable 'Login with Google' functionality in a ecommerce application.
 
-# In Scope
+## In Scope
 1. Sign-in with google: If the email is not already signed in, the user will be signing up with a question whether they are a seller or consumer.
 
 2. The users will be redirected to sellers/consumer page based on the role assigned to them. The users can later edit their roles.
