@@ -36,13 +36,13 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 		String userId = principal.getAttribute("email");
 
 		// Get the user details for the authenticated user
-		UserDetails userDetails = bestPickService.findUser(userId);
+		String userRole = bestPickService.findUser(userId);
 
 		// For registered users
-		if (userDetails != null && userDetails.getRole() != null && !"".equalsIgnoreCase(userDetails.getRole())) {
-			if ("consumer".equalsIgnoreCase(userDetails.getRole())) {
+		if (userRole != null && !"".equalsIgnoreCase(userRole)) {
+			if ("consumer".equalsIgnoreCase(userRole)) {
 				httpServletResponse.sendRedirect("/consumer/" + userName + "/" + userId);
-			} else if ("seller".equalsIgnoreCase(userDetails.getRole())) {
+			} else if ("seller".equalsIgnoreCase(userRole)) {
 				httpServletResponse.sendRedirect("/seller/" + userName + "/" + userId);
 			}
 		}

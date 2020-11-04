@@ -1,7 +1,5 @@
 package com.ecommerce.bestpick;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,22 +21,12 @@ public class BestPickService {
 	}
 
 	/**
-	 * Called to find the user details in the database
+	 * Called to find the user role in the database
 	 * 
 	 * @param userId
 	 *            the email id of the google user*
 	 */
-	public UserDetails findUser(String userId) {
-		List<UserDetails> userDetails = userRepo.findAll();
-		// System.out.println("count : " + userRepo.count());
-		// System.out.println("userId : " + userId);
-		if (0 != userRepo.count() && userId != null) {
-			for (UserDetails userDetail : userDetails) {
-				if (userId.equalsIgnoreCase(userDetail.getUserId())) {
-					return userDetail;
-				}
-			}
-		}
-		return null;
+	public String findUser(String userId) {
+		return userRepo.findRole(userId);
 	}
 }
